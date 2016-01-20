@@ -7,7 +7,6 @@
 
 'use strict';
 
-var fs = require('fs');
 var Remarkable = require('remarkable');
 var extend = require('extend-shallow');
 
@@ -54,7 +53,7 @@ module.exports = function md(name, opts) {
  */
 
 function read(fp, opts, fn) {
-  var str = fs.readFileSync(fp, 'utf8');
+  var str = fp;
   if (typeof fn === 'function') {
     str = fn(str)(opts);
   }
